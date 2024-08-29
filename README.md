@@ -32,7 +32,7 @@ Node.js and npm installed on your machine.
 
 ### API Key:
 
-You will need an API key for the OpenCage Geocoding API. Sign up at OpenCage Geocoding to get your API key and replace the placeholder in the cityApi.ts file.
+You will need an API key for the OpenCage Geocoding API. Sign up at OpenCage Geocoding to get your API key and replace the placeholder in the .env file.
 
 ### Environment Variables:
 
