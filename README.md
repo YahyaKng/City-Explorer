@@ -1,50 +1,52 @@
-# React + TypeScript + Vite
+# City Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+City Explorer is a React application that allows users to search for cities and view their locations on a map. The application integrates Leaflet for map visualization, Material-UI (MUI) for UI components, Tailwind CSS for styling, and uses TanStack Query for data fetching and Zustand for state management.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Features
 
-## Expanding the ESLint configuration
+- Search for Cities: Enter a city name to search and view its location on a map.
+- Map Visualization: Displays the city on a map with zoom controls and marker.
+- City Information: Shows basic information about the city, including its name, country, and population.
+- Recent Searches: Keeps track of the last 10 searches and displays them in a list.
+- Responsive Design: Works seamlessly on both desktop and mobile devices.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- React: JavaScript library for building user interfaces.
+- Leaflet: Library for interactive maps.
+- Material-UI (MUI): React component library for styling and UI - components.
+- Tailwind CSS: Utility-first CSS framework for styling.
+- Vite: Build tool for modern web projects.
+- TypeScript: Superset of JavaScript for type safety.
+- TanStack Query: Data fetching and caching library.
+- Zustand: State management library for React.
+- Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Prerequisites
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Node.js and npm installed on your machine.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Configuration
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### API Key:
+
+You will need an API key for the OpenCage Geocoding API. Sign up at OpenCage Geocoding to get your API key and replace the placeholder in the cityApi.ts file.
+
+### Environment Variables:
+
+Create a .env file in the root directory and add your API key:
+VITE_OPENCAGE_API_KEY=your_api_key_here
+
+## State Management
+
+The application uses Zustand to manage the state of recent searches. The state store is located in src/store/cityStore.ts.
+
+## Data Fetching
+
+TanStack Query is used to fetch city data from the OpenCage Geocoding API. The API call is handled in src/utils/api/cityApi.ts.
+
+## Styling
+
+The application uses Tailwind CSS for utility-based styling and MUI for component styling. Ensure Tailwind CSS is configured correctly in tailwind.config.js.
